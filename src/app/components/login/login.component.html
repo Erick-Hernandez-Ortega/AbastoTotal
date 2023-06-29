@@ -1,18 +1,29 @@
 <div class="justify-content-center d-flex vh-100 align-items-center login-bg">
   <div class="login p-4">
-    <div class="mb-5">
-      <h2>Inicia Sesión</h2>
+    <div class="mb-3 containerTextIniciarSesion">
+      <h3 class="titulo">Inicia Sesión</h3>
     </div>
-
-    
+    <div class="icono d-flex justify-content-center mb-3">
+      <i class="bi bi-person-circle" style="font-size: 4rem;"></i>
+    </div>
     <form action="" class="">
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <div class="mb-3 input-group">
+        <i class="bi bi-envelope-at-fill input-group-text"></i>
+        <input type="email" class="form-control" id="i-email" placeholder="Email">
       </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <div class="mb-3 input-group">
+        <i class="bi bi-pass-fill input-group-text"></i>
+        <input type="password" class="form-control" id="i-password" placeholder="Contraseña">
+      </div>
+
+      <div class="d-flex justify-content-center mb-3">
+        <button type="submit" class="btn btn-success">
+          <i class="bi bi-box-arrow-in-right"></i>
+          Iniciar Sesión
+        </button>
+      </div>
+      <div class="d-flex justify-content-center mb-3">
+        <a href="#" class="forgotPassword">¿Olvidaste la contraseña?</a>
       </div>
     </form>
   </div>

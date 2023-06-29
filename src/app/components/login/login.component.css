@@ -1,14 +1,69 @@
 .login-bg {
-    background: linear-gradient(to left, var(--amaranth), var(--san-marino));
+  background: url("./../../../assets/wave.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.containerTextIniciarSesion {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.forgotPassword {
+  color: brown;
 }
 
 .login {
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 20px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background-color: rgba(255, 255, 255);
+  border-radius: 20px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-input {
-    background-color: transparent;
-    border: none;
+.titulo {
+  text-align: center;
+}
+
+@media (max-width: 575px) {
+  /* Estilos para pantallas con ancho máximo de 575px (Extra small) */
+  .login {
+    width: 100%;
+  }
+  .login-bg {
+    background-size: 500%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Estilos para pantallas con ancho entre 576px y 767px (Small) */
+  .login {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Estilos para pantallas con ancho entre 768px y 991px (Medium) */
+  .login {
+    width: 60%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Estilos para pantallas con ancho entre 992px y 1199px (Large) */
+  .login {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  /* Estilos para pantallas con ancho entre 1200px y 1399px (X-Large) */
+  .login {
+    width: 35%;
+  }
+}
+
+@media (min-width: 1400px) {
+  /* Estilos para pantallas con ancho mínimo de 1400px (XX-Large) */
+  .login {
+    width: 30%;
+  }
 }
