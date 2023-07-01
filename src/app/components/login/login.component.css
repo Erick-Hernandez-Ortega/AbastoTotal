@@ -6,21 +6,22 @@
 }
 
 .containerTextIniciarSesion {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid var(--gris-claro);
 }
 
 .forgotPassword {
-  color: brown;
+  color: var(--silver);
 }
 
 .login {
-  background-color: rgba(255, 255, 255);
+  background-color: var(--blanco);
   border-radius: 20px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .titulo {
   text-align: center;
+  color: var(--gris-obscuro);
 }
 
 @media (max-width: 575px) {
