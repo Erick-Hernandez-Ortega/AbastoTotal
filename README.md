@@ -1,5 +1,6 @@
 # Abastecito
 ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+
 Abastecito es un software de distribuidor de abarrotes diseñado para facilitar la gestión de inventario, ventas y pedidos en negocios de abarrotes y tiendas similares. Con Abastecito, puedes tener un control completo sobre tus productos, clientes y transacciones, lo que te permite optimizar tus operaciones y mejorar la eficiencia de tu negocio.
 
 Características principales:
