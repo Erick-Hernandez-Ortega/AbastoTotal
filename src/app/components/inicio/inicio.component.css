@@ -1,0 +1,14 @@
+.Containerinicio {
+  background-image: url("../../../assets/wave2.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
+
+.welcome-text {
+  color: var(--blanco);
+}
+
+.description {
+  color: var(--gris-claro);
+}
