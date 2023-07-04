@@ -1,27 +1,14 @@
 # Abastecito
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+Abastecito es un software de distribuidor de abarrotes diseñado para facilitar la gestión de inventario, ventas y pedidos en negocios de abarrotes y tiendas similares. Con Abastecito, puedes tener un control completo sobre tus productos, clientes y transacciones, lo que te permite optimizar tus operaciones y mejorar la eficiencia de tu negocio.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
+Características principales:
 
-## Development server
+- Gestión de inventario: Mantén un seguimiento preciso de tus productos, sus cantidades y fechas de vencimiento.
+- Ventas y pedidos: Registra y realiza un seguimiento de las ventas y pedidos de tus clientes de manera eficiente.
+- Reportes y análisis: Accede a informes detallados y análisis de tus datos de ventas e inventario para tomar decisiones informadas.
+- Interfaz intuitiva: Disfruta de una interfaz de usuario moderna y fácil de usar que simplifica tus tareas diarias.
+- Personalización: Adapta el software a tus necesidades y preferencias específicas con opciones de configuración flexibles.
+- Abastecito está diseñado para ayudarte a optimizar tus procesos de negocio y brindarte el control necesario para alcanzar el éxito en el competitivo mercado de abarrotes. ¡Simplifica tus operaciones y lleva tu negocio al siguiente nivel con Abastecito!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Ten en cuenta que esta es solo una descripción de ejemplo y puedes ajustarla según las características y el enfoque único de tu software Abastecito.
