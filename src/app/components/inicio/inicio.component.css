@@ -9,6 +9,50 @@
   color: var(--blanco);
 }
 
+.icono{
+  color: var(--blanco);
+  font-size: 10rem;
+}
+
 .description {
   color: var(--gris-claro);
+}
+
+@media (max-width: 575px) {
+  /* Estilos para pantallas con ancho máximo de 575px (Extra small) */
+  .icono {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Estilos para pantallas con ancho entre 576px y 767px (Small) */
+  .icono {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Estilos para pantallas con ancho entre 768px y 991px (Medium) */
+  .icono {
+    font-size: 7rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Estilos para pantallas con ancho entre 992px y 1199px (Large) */
+  .icono {
+    font-size: 8rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  /* Estilos para pantallas con ancho entre 1200px y 1399px (X-Large) */
+  .icono {
+    font-size: 9rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  /* Estilos para pantallas con ancho mínimo de 1400px (XX-Large) */
 }
