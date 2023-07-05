@@ -1,0 +1,6 @@
+.register {
+    background: url("./../../../assets/wave.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
