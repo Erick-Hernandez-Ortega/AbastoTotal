@@ -1,5 +1,28 @@
 <app-loader *ngIf="loading"></app-loader>
 
 <div class="register vh-100 d-flex justify-content-center align-items-center" *ngIf="!loading">
-  
+  <div class="register-card p-3">
+    <form action="">
+        <div class="row">
+            <div class="mb-3 col">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="i-name" placeholder="Pepe" required>
+                <div id="emailHelp" class="form-text">Requerido</div>
+            </div>
+            <div class="col mb-3">
+                <label class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="i-lastname" placeholder="Gonzalez" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label class="form-label">Correo Electronico</label>
+                <input type="email" class="form-control" id="i-email" placeholder="pepe@gmail.com" required>
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+        
+    </form>
+  </div>
 </div>

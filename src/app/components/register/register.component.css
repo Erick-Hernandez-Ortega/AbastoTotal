@@ -4,3 +4,12 @@
   background-position: top;
   background-size: cover;
 }
+
+.register-card {
+  background-color: var(--blanco);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+#emailHelp {
+  color: red;
+}
