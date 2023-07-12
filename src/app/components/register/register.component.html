@@ -2,35 +2,46 @@
 
 <div class="register vh-100 d-flex justify-content-center align-items-center" *ngIf="!loading">
     <div class="register-card p-3">
+        <div class="p-2 d-flex justify-content-between">
+            <h3>Crea una cuenta para usar AbastoTotal</h3>
+            <a routerLink="/login" class="text-decoration-none" style="color: var(--san-marino);">
+                <i class="bi bi-person-badge"></i>
+                Iniciar Sesión</a>
+        </div>
         <form (submit)="registrarUsuario()">
             <div class="row">
                 <div class="mb-3 col">
                     <label class="form-label">Nombre</label>
-                    <input type="text" class="form-control" name="i-name" placeholder="Pepe" required [(ngModel)]="name">
+                    <input type="text" class="form-control" name="i-name" placeholder="Pepe" required [(ngModel)]="name"
+                        autocomplete="off">
                 </div>
                 <div class="col mb-3">
                     <label class="form-label">Apellidos</label>
-                    <input type="text" class="form-control" name="i-lastname" placeholder="Gonzalez" required [(ngModel)]="last_names">
+                    <input type="text" class="form-control" name="i-lastname" placeholder="Gonzalez" required
+                        [(ngModel)]="last_names" autocomplete="off">
                 </div>
             </div>
             <div class="row">
                 <div class="col mb-3">
                     <label class="form-label">Correo Electronico</label>
-                    <input type="email" class="form-control" name="i-email" placeholder="pepe@gmail.com" [(ngModel)]="email">
+                    <input type="email" class="form-control" name="i-email" placeholder="pepe@gmail.com"
+                        [(ngModel)]="email" autocomplete="off">
                 </div>
                 <div class="col">
                     <label class="form-label">Celular</label>
-                    <input type="tel" class="form-control" name="i-phone" placeholder="3313138934" [(ngModel)]="phone">
+                    <input type="tel" class="form-control" name="i-phone" placeholder="3313138934" [(ngModel)]="phone"
+                        autocomplete="off">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
                     <label class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" name="i-password" required [(ngModel)]="password">
+                    <input type="password" class="form-control" name="i-password" required [(ngModel)]="password"
+                        autocomplete="off">
                 </div>
                 <div class="col">
                     <label class="form-label">Confirma contraseña</label>
-                    <input type="password" class="form-control" name="i-c-password" required>
+                    <input type="password" class="form-control" name="i-c-password" required autocomplete="off">
                 </div>
                 <div id="emailHelp" class="form-text">Minimo 8 caracteres y debe incluir mayúsculas y minúsculas</div>
             </div>

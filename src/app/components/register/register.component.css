@@ -11,6 +11,10 @@
   border-radius: 20px;
 }
 
+#emailHelp {
+  color: var(--silver);
+}
+
 @media (max-width: 575px) {
   /* Estilos para pantallas con ancho máximo de 575px (Extra small) */
   .register-card {
