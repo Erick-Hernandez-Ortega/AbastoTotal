@@ -9,6 +9,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     ForgotPasswordComponent,
     LoaderComponent,
     InicioComponent,
-    RegisterComponent
+    RegisterComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

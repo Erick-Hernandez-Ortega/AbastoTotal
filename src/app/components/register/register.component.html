@@ -1,5 +1,7 @@
 <app-loader *ngIf="loading"></app-loader>
 
+<app-modal *ngIf="showModal" [contenido]="'Hola'"></app-modal>
+
 <div class="register vh-100 d-flex justify-content-center align-items-center" *ngIf="!loading">
     <div class="register-card p-3">
         <div class="p-2 d-flex justify-content-between">

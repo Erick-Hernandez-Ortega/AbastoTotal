@@ -8,6 +8,7 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 })
 export class RegisterComponent implements OnInit {
   loading: boolean = true;
+  showModal: boolean = true;
   name: string = '';
   last_names: string = '';
   email: string = '';
@@ -25,6 +26,10 @@ export class RegisterComponent implements OnInit {
   registrarUsuario(): void {
     const auth = getAuth();
 
+    if(this.name.match(/^[a-zA-Z\s']+$/) || this.last_names.match(/^[a-zA-Z\s']+$/)){
+      alert("no se puede bro")
+    }
+    else {
     createUserWithEmailAndPassword(auth, this.email, this.password)
       .then((userCredential) => {
         // Signed in
@@ -36,7 +41,8 @@ export class RegisterComponent implements OnInit {
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
-      });
+        alert(`Error: ${errorMessage} ${errorCode}`)
+      });}
 
     
   }
