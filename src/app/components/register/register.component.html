@@ -1,6 +1,6 @@
 <app-loader *ngIf="loading"></app-loader>
 
-<app-modal *ngIf="showModal" [contenido]="'Hola'"></app-modal>
+<app-modal *ngIf="showModal" [contenido]="errorMessage"></app-modal>
 
 <div class="register vh-100 d-flex justify-content-center align-items-center" *ngIf="!loading">
     <div class="register-card p-3">

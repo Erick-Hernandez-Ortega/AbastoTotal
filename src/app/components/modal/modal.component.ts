@@ -6,12 +6,16 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
-  @Input() contenido : string = "";
-  @Input() titulo : string = "";
+  @Input() contenido: string = "";
+  showModal: boolean = true
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  closeModal() {
+    this.showModal = !this.showModal
   }
 
 }
