@@ -14,7 +14,8 @@ export class RegisterComponent implements OnInit {
   email: string = '';
   phone: string = '';
   password: string = '';
-  errorMessage: string = "";
+  messageModal: string = "";
+  modalError : boolean = false
 
   constructor() { }
 
@@ -28,7 +29,8 @@ export class RegisterComponent implements OnInit {
     const auth = getAuth();
 
     if (!this.name.match(/^[a-zA-Z\s']+$/) || !this.last_names.match(/^[a-zA-Z\s']+$/)) {
-      this.errorMessage = "Error en el nombre de usuario y/o apellido"
+      this.messageModal = "Error en el nombre de usuario y/o apellido"
+      this.modalError = true
       this.showModal = !this.showModal
     }
     else {
@@ -36,7 +38,9 @@ export class RegisterComponent implements OnInit {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          alert("Se registro el usuario")
+          this.messageModal = "El usuario fue registrado con exito"
+          this.modalError = false
+          this.showModal = !this.showModal
           // ...
         })
         .catch((error) => {
@@ -46,7 +50,9 @@ export class RegisterComponent implements OnInit {
           alert(`Error: ${errorMessage} ${errorCode}`)
         });
     }
+  }
 
+  cleanInputs() : void {
 
   }
 }
