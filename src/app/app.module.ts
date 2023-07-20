@@ -10,6 +10,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './components/modal/modal.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ModalComponent } from './components/modal/modal.component';
     LoaderComponent,
     InicioComponent,
     RegisterComponent,
-    ModalComponent
+    ModalComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
