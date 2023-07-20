@@ -1,22 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent implements OnInit {
-  @Input() contenido: string = "";
+  @Input() contenido: string = '';
   @Input() IsError: boolean = false;
-  showModal: boolean = true
+  @Input() showModal: boolean = false;
+  // Se pone para hacer el two way binding
+  @Output() showModalChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   closeModal() {
-    this.showModal = !this.showModal
+    this.showModal = false;
+    this.showModalChange.emit(this.showModal);
   }
-
 }
