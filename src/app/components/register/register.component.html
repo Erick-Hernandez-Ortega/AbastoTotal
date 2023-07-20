@@ -1,6 +1,6 @@
 <app-loader *ngIf="loading"></app-loader>
 
-<app-modal *ngIf="showModal" [contenido]="messageModal" [IsError]="modalError"></app-modal>
+<app-modal [(showModal)]="showModal" [contenido]="messageModal" [IsError]="modalError"></app-modal>
 
 <div class="register vh-100 d-flex justify-content-center align-items-center" *ngIf="!loading">
     <div class="register-card p-3">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="col">
                     <label class="form-label">Confirma contraseña</label>
-                    <input type="password" class="form-control" name="i-c-password" required autocomplete="off">
+                    <input type="password" class="form-control" name="i-c-password" required autocomplete="off" [(ngModel)]="password2">
                 </div>
                 <div id="emailHelp" class="form-text">Minimo 8 caracteres y debe incluir mayúsculas y minúsculas</div>
             </div>
