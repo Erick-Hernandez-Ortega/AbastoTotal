@@ -30,8 +30,8 @@ export class RegisterComponent implements OnInit {
     const auth = getAuth();
 
     if (
-      !this.name.trim().match(/^[a-zA-Z\s']+$/) ||
-      !this.last_names.trim().match(/^[a-zA-Z\s']+$/)
+      !this.name.trim().match(/^[a-zA-ZáéíóúÁÉÍÓÚ\s']+$/) ||
+      !this.last_names.trim().match(/^[a-zA-ZáéíóúÁÉÍÓÚ\s']+$/)
     ) {
       this.lauchModalError('Error en el nombre de usuario y/o apellido');
     } else if (
