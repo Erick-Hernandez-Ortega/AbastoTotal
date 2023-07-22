@@ -6,12 +6,12 @@
     <div class="icono d-flex justify-content-center mb-3">
       <i class="bi bi-person-circle" style="font-size: 4rem;"></i>
     </div>
-    <form action="" class="">
+    <form (submit)="signIn()">
       <div class="mb-3">
-        <input type="email" class="form-control border-bottom border-start-0 border-end-0 border-top-0 rounded-0" id="i-email" placeholder="Email">
+        <input type="email" class="form-control border-bottom border-start-0 border-end-0 border-top-0 rounded-0" name="i-email" placeholder="Email" [(ngModel)]="email">
       </div>
       <div class="mb-3">
-        <input type="password" class="form-control border-bottom border-start-0 border-end-0 border-top-0 rounded-0" id="i-password" placeholder="Contraseña">
+        <input type="password" class="form-control border-bottom border-start-0 border-end-0 border-top-0 rounded-0" name="i-password" placeholder="Contraseña" [(ngModel)]="password">
       </div>
 
       <div class="d-flex justify-content-center mb-3">
