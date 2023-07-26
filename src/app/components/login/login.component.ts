@@ -9,6 +9,8 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
+  showModal: boolean = false;
+  messageModal: string = '';
 
   constructor() {}
 
@@ -17,17 +19,29 @@ export class LoginComponent implements OnInit {
   signIn(): void {
     const auth = getAuth();
 
-    signInWithEmailAndPassword(auth, this.email, this.password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log('Seseion iniciada: ' + user.email);
+    if (this.email === '' || this.password === '') {
+      this.messageModal = 'Usuario y/o contraseña en blanco';
+      this.showModal = true;
+    } else {
+      signInWithEmailAndPassword(auth, this.email, this.password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log('Seseion iniciada: ' + user.email);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
 
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
+          if (errorCode === 'auth/user-not-found') {
+            this.messageModal = 'Correo no encontrado';
+          } else if (errorCode === 'auth/wrong-password') {
+            this.messageModal = 'Contraseña incorrecta';
+          } else {
+            this.messageModal = errorCode;
+          }
+          this.showModal = true;
+        });
+    }
   }
 }
