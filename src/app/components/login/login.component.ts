@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   showModal: boolean = false;
   messageModal: string = '';
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
@@ -27,8 +28,8 @@ export class LoginComponent implements OnInit {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log('Seseion iniciada: ' + user.email);
-          // ...
+          alert('Bienvenido ' + user.email);
+          this.router.navigate(['dashboard']);
         })
         .catch((error) => {
           const errorCode = error.code;
