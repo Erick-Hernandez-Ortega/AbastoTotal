@@ -13,6 +13,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TableDashboardComponent } from './components/table-dashboard/table-dashboard.component';
+import { DashboardToolbarComponent } from './components/dashboard-toolbar/dashboard-toolbar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TableDashboardComponent } from './components/table-dashboard/table-dash
     ModalComponent,
     DashboardComponent,
     HeaderComponent,
-    TableDashboardComponent
+    TableDashboardComponent,
+    DashboardToolbarComponent
   ],
   imports: [
     BrowserModule,
