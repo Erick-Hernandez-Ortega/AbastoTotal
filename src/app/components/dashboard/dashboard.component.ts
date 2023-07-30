@@ -13,7 +13,14 @@ export class DashboardComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const auth = getAuth();
+
+    if (auth.currentUser === null) {
+      this.router.navigate(['login']);
+      alert('Inicia sesion primero');
+    }
+  }
 
   signOut() {
     const auth = getAuth();
@@ -25,7 +32,7 @@ export class DashboardComponent implements OnInit {
         this.router.navigate(['']);
       })
       .catch((error) => {
-        // An error happened.
+        alert(`Hubo un error: ${error}`)
       });
   }
 }
