@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './components/modal/modal.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TableDashboardComponent } from './components/table-dashboard/table-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeaderComponent } from './components/header/header.component';
     RegisterComponent,
     ModalComponent,
     DashboardComponent,
-    HeaderComponent
+    HeaderComponent,
+    TableDashboardComponent
   ],
   imports: [
     BrowserModule,
