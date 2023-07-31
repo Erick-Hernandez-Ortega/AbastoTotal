@@ -14,6 +14,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TableDashboardComponent } from './components/table-dashboard/table-dashboard.component';
 import { DashboardToolbarComponent } from './components/dashboard-toolbar/dashboard-toolbar.component';
+import { InventoryComponent } from './components/inventory/inventory.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DashboardToolbarComponent } from './components/dashboard-toolbar/dashbo
     DashboardComponent,
     HeaderComponent,
     TableDashboardComponent,
-    DashboardToolbarComponent
+    DashboardToolbarComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,
