@@ -15,6 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TableDashboardComponent } from './components/table-dashboard/table-dashboard.component';
 import { DashboardToolbarComponent } from './components/dashboard-toolbar/dashboard-toolbar.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
+import { InventoryTableComponent } from './components/inventory-table/inventory-table.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { InventoryComponent } from './components/inventory/inventory.component';
     HeaderComponent,
     TableDashboardComponent,
     DashboardToolbarComponent,
-    InventoryComponent
+    InventoryComponent,
+    InventoryTableComponent
   ],
   imports: [
     BrowserModule,
