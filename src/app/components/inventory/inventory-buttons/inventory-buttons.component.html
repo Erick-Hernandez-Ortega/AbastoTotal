@@ -1,0 +1,43 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAdd">
+  Nuevo producto
+</button>
+
+
+<div class="modal fade" id="modalAdd" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Nuevo productos</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="input1" class="form-label">Nombre del producto</label>
+          <input type="text" class="form-control" id="i-nombre" placeholder="Nombre">
+        </div>
+        <div class="mb-3">
+          <label for="input1" class="form-label">Existencias del producto</label>
+          <input type="number" class="form-control" id="i-existencias" placeholder="0">
+        </div>
+        <div class="mb-3">
+          <label for="input1" class="form-label">Costo del producto</label>
+          <div class="input-group mb-3" col>
+            <span class="input-group-text">$</span>
+            <input type="number" class="form-control" id="i-costo">
+          </div>
+          <label for="input1" class="form-label">Precio del producto (Publico)</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="number" class="form-control" id="i-precio">
+          </div>
+        </div>
+        <div class="form-text">El margen de ganancia se calcula automaticamente</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Crear</button>
+      </div>
+    </div>
+  </div>
+</div>

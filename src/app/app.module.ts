@@ -16,6 +16,7 @@ import { TableDashboardComponent } from './components/table-dashboard/table-dash
 import { DashboardToolbarComponent } from './components/dashboard-toolbar/dashboard-toolbar.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { InventoryTableComponent } from './components/inventory-table/inventory-table.component';
+import { InventoryButtonsComponent } from './components/inventory/inventory-buttons/inventory-buttons.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { InventoryTableComponent } from './components/inventory-table/inventory-
     TableDashboardComponent,
     DashboardToolbarComponent,
     InventoryComponent,
-    InventoryTableComponent
+    InventoryTableComponent,
+    InventoryButtonsComponent
   ],
   imports: [
     BrowserModule,
