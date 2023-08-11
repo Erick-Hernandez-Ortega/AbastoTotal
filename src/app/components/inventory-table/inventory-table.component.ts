@@ -15,7 +15,17 @@ export class InventoryTableComponent implements OnInit {
   ngOnInit() {
     const unsub = onSnapshot(collection(db, 'productos'), (query) => {
       this.productos = [];
-      query.forEach((doc) => this.productos.push(doc.data()));
+      query.forEach((doc) => {
+        this.productos.push({ id: doc.id, ...doc.data() });
+      });
     });
+  }
+
+  updateProduct(id: string): void {
+    console.log(id);
+  }
+
+  deleteProduct(id: string): void {
+    console.log(id);
   }
 }
