@@ -34,33 +34,41 @@ export class InventoryTableComponent implements OnInit {
   }
 
   async showProduct(id: string) {
-    this.idActualizar = id;
-    const docRef = doc(db, 'productos', id);
-    const docSnap = await getDoc(docRef);
+    try {
+      this.idActualizar = id;
+      const docRef = doc(db, 'productos', id);
+      const docSnap = await getDoc(docRef);
 
-    const producto = docSnap.data();
-    this.nombreProductoActualizar = producto!['nombre'];
-    this.existenciasProductoActualizar = producto!['existencias'];
-    this.costoProductoActualizar = producto!['costo'];
-    this.precioProductoActualizar = producto!['precio'];
+      const producto = docSnap.data();
+      this.nombreProductoActualizar = producto!['nombre'];
+      this.existenciasProductoActualizar = producto!['existencias'];
+      this.costoProductoActualizar = producto!['costo'];
+      this.precioProductoActualizar = producto!['precio'];
+    } catch (error) {
+      alert(`Ocurrio un error: ${error}`);
+    }
   }
 
   async updateProduct() {
-    const docRef = doc(db, 'productos', this.idActualizar);
-    const margen =
-      ((this.precioProductoActualizar - this.costoProductoActualizar) /
-        this.costoProductoActualizar) *
-      100;
+    try {
+      const docRef = doc(db, 'productos', this.idActualizar);
+      const margen =
+        ((this.precioProductoActualizar - this.costoProductoActualizar) /
+          this.costoProductoActualizar) *
+        100;
 
-    await updateDoc(docRef, {
-      nombre: this.nombreProductoActualizar,
-      costo: this.costoProductoActualizar,
-      existencias: this.existenciasProductoActualizar,
-      precio: this.precioProductoActualizar,
-      margen: margen.toFixed(2),
-    });
-    this.closeButton.nativeElement.click();
-    alert('Se ha actualizado con exito!');
+      await updateDoc(docRef, {
+        nombre: this.nombreProductoActualizar,
+        costo: this.costoProductoActualizar,
+        existencias: this.existenciasProductoActualizar,
+        precio: this.precioProductoActualizar,
+        margen: margen.toFixed(2),
+      });
+      this.closeButton.nativeElement.click();
+      alert('Se ha actualizado con exito!');
+    } catch (error) {
+      alert(`Ocurrio un error: ${error}`);
+    }
   }
 
   deleteProduct(id: string): void {
