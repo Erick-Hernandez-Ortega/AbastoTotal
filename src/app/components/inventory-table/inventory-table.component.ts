@@ -5,6 +5,8 @@ import {
   doc,
   getDoc,
   onSnapshot,
+  orderBy,
+  query,
   updateDoc,
 } from 'firebase/firestore';
 import { db } from 'src/main';
@@ -28,9 +30,11 @@ export class InventoryTableComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    const unsub = onSnapshot(collection(db, 'productos'), (query) => {
+    const q = query(collection(db, 'productos'), orderBy('nombre'));
+
+    const unsub = onSnapshot(q, (querySnapshot) => {
       this.productos = [];
-      query.forEach((doc) => {
+      querySnapshot.forEach((doc) => {
         this.productos.push({ id: doc.id, ...doc.data() });
       });
     });
