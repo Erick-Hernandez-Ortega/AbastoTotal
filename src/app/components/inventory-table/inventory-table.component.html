@@ -16,11 +16,10 @@
       <td class="fw-bold">${{producto.precio}}</td>
       <td>${{producto.costo}}</td>
       <td>{{producto.margen}} %</td>
-      <td>{{producto.id}}</td>
       <td>
         <button type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
         <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#modal-u"
-          (click)="updateProduct(producto.id)"><i class="bi bi-pen"></i></button>
+          (click)="showProduct(producto.id)"><i class="bi bi-pen"></i></button>
       </td>
     </tr>
   </tbody>
@@ -37,29 +36,29 @@
       <div class="modal-body">
         <div class="mb-3">
           <label for="input1" class="form-label">Nombre del producto</label>
-          <input type="text" class="form-control" id="u-nombre" autocomplete="off">
+          <input type="text" class="form-control" id="u-nombre" autocomplete="off" [(ngModel)]="nombreProductoActualizar">
         </div>
         <div class="mb-3">
           <label for="input1" class="form-label">Existencias del producto</label>
-          <input type="number" class="form-control" id="u-existencias" autocomplete="off">
+          <input type="number" class="form-control" id="u-existencias" autocomplete="off" [(ngModel)]="existenciasProductoActualizar">
         </div>
         <div class="mb-3">
           <label for="costo-u" class="form-label">Costo del producto</label>
           <div class="input-group mb-3">
             <span class="input-group-text">$</span>
-            <input type="number" class="form-control" id="u-costo" autocomplete="off">
+            <input type="number" class="form-control" id="u-costo" autocomplete="off" [(ngModel)]="costoProductoActualizar">
           </div>
           <label for="precio-u" class="form-label">Precio del producto (Publico)</label>
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text">$</span>
-          <input type="number" class="form-control" id="u-precio" autocomplete="off">
+          <input type="number" class="form-control" id="u-precio" autocomplete="off" [(ngModel)]="precioProductoActualizar">
         </div>
         <div class="form-text">El margen de ganancia se calcula automaticamente</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
+        <button type="button" class="btn btn-outline-secondary" #closeButton data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="updateProduct()">Guardar cambios</button>
       </div>
     </div>
   </div>
