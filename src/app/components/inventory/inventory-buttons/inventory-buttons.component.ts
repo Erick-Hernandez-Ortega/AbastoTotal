@@ -19,7 +19,7 @@ export class InventoryButtonsComponent implements OnInit {
   ngOnInit() {}
 
   async addProduct() {
-    if (!this.nombreProducto.trim().match(/^[a-zA-Z0-9\s\-]+$/u)) {
+    if (!this.nombreProducto.trim().match(/^[a-zA-Z0-9ñÑ\s\-]+$/u)) {
       alert('No se permite signos de puntuacion en el nombre del producto');
     } else {
       this.margenGanancia = ((this.precio - this.costos) / this.costos) * 100;
