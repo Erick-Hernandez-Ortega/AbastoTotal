@@ -17,7 +17,8 @@
       <td>${{producto.costo}}</td>
       <td>{{producto.margen}} %</td>
       <td>
-        <button type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-d"
+          (click)="selectProductToDelete(producto.id)"><i class="bi bi-trash3"></i></button>
         <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#modal-u"
           (click)="showProduct(producto.id)"><i class="bi bi-pen"></i></button>
       </td>
@@ -36,29 +37,57 @@
       <div class="modal-body">
         <div class="mb-3">
           <label for="input1" class="form-label">Nombre del producto</label>
-          <input type="text" class="form-control" id="u-nombre" autocomplete="off" [(ngModel)]="nombreProductoActualizar">
+          <input type="text" class="form-control" id="u-nombre" autocomplete="off"
+            [(ngModel)]="nombreProductoActualizar">
         </div>
         <div class="mb-3">
           <label for="input1" class="form-label">Existencias del producto</label>
-          <input type="number" class="form-control" id="u-existencias" autocomplete="off" [(ngModel)]="existenciasProductoActualizar">
+          <input type="number" class="form-control" id="u-existencias" autocomplete="off"
+            [(ngModel)]="existenciasProductoActualizar">
         </div>
         <div class="mb-3">
           <label for="costo-u" class="form-label">Costo del producto</label>
           <div class="input-group mb-3">
             <span class="input-group-text">$</span>
-            <input type="number" class="form-control" id="u-costo" autocomplete="off" [(ngModel)]="costoProductoActualizar">
+            <input type="number" class="form-control" id="u-costo" autocomplete="off"
+              [(ngModel)]="costoProductoActualizar">
           </div>
           <label for="precio-u" class="form-label">Precio del producto (Publico)</label>
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text">$</span>
-          <input type="number" class="form-control" id="u-precio" autocomplete="off" [(ngModel)]="precioProductoActualizar">
+          <input type="number" class="form-control" id="u-precio" autocomplete="off"
+            [(ngModel)]="precioProductoActualizar">
         </div>
         <div class="form-text">El margen de ganancia se calcula automaticamente</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" #closeButton data-bs-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary" (click)="updateProduct()">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Delete -->
+<div class="modal fade" id="modal-d" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar producto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <p>
+            Antes de proceder con la acción de borrado, es importante tener en cuenta que eliminar información es una
+            acción irreversible. Una vez que se elimina un registro o dato, no se podrá recuperar posteriormente.
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" #deleteButton data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" (click)="deleteProduct()">Borrar</button>
       </div>
     </div>
   </div>

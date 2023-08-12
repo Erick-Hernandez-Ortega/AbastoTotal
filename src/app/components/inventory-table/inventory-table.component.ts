@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {
   collection,
+  deleteDoc,
   doc,
   getDoc,
   onSnapshot,
@@ -16,11 +17,13 @@ import { db } from 'src/main';
 export class InventoryTableComponent implements OnInit {
   productos: any[] = [];
   idActualizar: string = '';
+  idBorrar: string = '';
   nombreProductoActualizar: string = '';
   existenciasProductoActualizar: number = 0;
   costoProductoActualizar: number = 0;
   precioProductoActualizar: number = 0;
   @ViewChild('closeButton', { static: true }) closeButton!: ElementRef;
+  @ViewChild('deleteButton', { static: true }) closeDeleteButton!: ElementRef;
 
   constructor() {}
 
@@ -65,13 +68,24 @@ export class InventoryTableComponent implements OnInit {
         margen: margen.toFixed(2),
       });
       this.closeButton.nativeElement.click();
-      alert('Se ha actualizado con exito!');
     } catch (error) {
       alert(`Ocurrio un error: ${error}`);
     }
   }
 
-  deleteProduct(id: string): void {
-    console.log(id);
+  selectProductToDelete(id: string): void {
+    this.idBorrar = id;
+  }
+
+  async deleteProduct() {
+    try {
+      const docRef = doc(db, 'productos', this.idBorrar);
+
+      await deleteDoc(docRef);
+      this.idBorrar = '';
+      this.closeDeleteButton.nativeElement.click();
+    } catch (error) {
+      alert(`Ocurrio un error: ${error}`);
+    }
   }
 }
