@@ -6,6 +6,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
+import { SuppliersComponent } from './components/suppliers/suppliers.component';
 
 const routes: Routes = [
   {path: "", component: InicioComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: "register", component: RegisterComponent},
   {path: "dashboard", component: DashboardComponent},
   {path: "inventory", component: InventoryComponent},
+  {path: "suppliers", component: SuppliersComponent}
 ];
 
 @NgModule({
