@@ -4,6 +4,7 @@ import {
   deleteDoc,
   doc,
   getDoc,
+  limit,
   onSnapshot,
   orderBy,
   query,
@@ -24,13 +25,22 @@ export class InventoryTableComponent implements OnInit {
   existenciasProductoActualizar: number = 0;
   costoProductoActualizar: number = 0;
   precioProductoActualizar: number = 0;
+  limit: number = 10;
   @ViewChild('closeButton', { static: true }) closeButton!: ElementRef;
   @ViewChild('deleteButton', { static: true }) closeDeleteButton!: ElementRef;
 
   constructor() {}
 
   ngOnInit() {
-    const q = query(collection(db, 'productos'), orderBy('nombre'));
+    this.loadData();
+  }
+
+  async loadData() {
+    const q = query(
+      collection(db, 'productos'),
+      orderBy('nombre'),
+      limit(this.limit)
+    );
 
     const unsub = onSnapshot(q, (querySnapshot) => {
       this.productos = [];
@@ -91,5 +101,12 @@ export class InventoryTableComponent implements OnInit {
     } catch (error) {
       alert(`Ocurrio un error: ${error}`);
     }
+  }
+
+  showMoreProductos(event: Event) {
+    const valorSeleccionado = (event.target as HTMLSelectElement).value;
+
+    this.limit = parseInt(valorSeleccionado);
+    this.loadData();
   }
 }

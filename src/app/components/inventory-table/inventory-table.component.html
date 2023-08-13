@@ -25,6 +25,15 @@
     </tr>
   </tbody>
 </table>
+<div class="d-flex justify-content-end gap-2 align-items-center p-3">
+  <p class="verResultados">Ver</p>
+  <select class="form-select w-auto text-muted" (change)="showMoreProductos($event)">
+    <option selected value="10">10 Registros</option>
+    <option value="50">50 Registros</option>
+    <option value="1">1 Registro xd</option>
+    <option value="3">3 Registros</option>
+  </select>
+</div>
 
 <!-- Modal Update -->
 <div class="modal fade" id="modal-u" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
