@@ -1,29 +1,40 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Clave</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Razón social</th>
+      <th scope="col">Contacto</th>
+      <th scope="col">Información bancaria</th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+    <tr *ngFor="let proveedor of suppliers">
+      <th scope="row">{{ proveedor.clave }}</th>
+      <td>{{ proveedor.nombre }}</td>
+      <td>
+        <p>{{ proveedor.razon_social }}</p>
+        <span class="color">RFC: {{ proveedor.rfc }}</span>
+        <hr class="color">
+        <span class="color">{{ proveedor.direccion }}</span>
+      </td>
+      <td>
+        <p>Titular: {{ proveedor.titular}}</p>
+        <p class="color">Telefono: {{ proveedor.telefono }}</p>
+        <p class="color">Email: {{ proveedor.email }}</p>
+      </td>
+      <td>
+        <p>Banco: {{ proveedor.banco }}</p>
+        <p class="color">No. Cuenta: {{ proveedor.numero_cuenta }}</p>
+        <p class="color">CLABE: {{ proveedor.clabe }}</p>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-d"><i
+            class="bi bi-trash3"></i></button>
+        <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#modal-u"><i
+            class="bi bi-pen"></i></button>
+      </td>
     </tr>
   </tbody>
 </table>

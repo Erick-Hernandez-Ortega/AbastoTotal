@@ -1,0 +1,8 @@
+td, th {
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+.color {
+    color: var(--silver);
+}
