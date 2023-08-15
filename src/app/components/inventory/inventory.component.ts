@@ -10,7 +10,14 @@ import { Router } from '@angular/router';
 export class InventoryComponent implements OnInit {
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const auth = getAuth();
+
+    if (auth.currentUser === null) {
+      this.router.navigate(['login']);
+      alert('Inicia sesion primero');
+    }
+  }
 
   signOut() {
     const auth = getAuth();
