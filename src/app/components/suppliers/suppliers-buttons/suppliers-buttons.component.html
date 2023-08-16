@@ -14,11 +14,12 @@
         <div class="mb-3 row">
           <div class="col">
             <label label="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre-s">
+            <input type="text" class="form-control" id="nombre-s" [(ngModel)]="nombre">
           </div>
           <div class="col">
             <label for="clave" class="form-label">Clave</label>
-            <input type="text" name="clave" class="form-control" id="clave">
+            <input type="text" name="clave" class="form-control text-uppercase" id="clave" maxlength="3"
+              [(ngModel)]="clave">
           </div>
         </div>
 
@@ -26,32 +27,33 @@
           <h5>Razón Social</h5>
           <div class="col">
             <label for="razon" class="form-label">Nombre de la razón</label>
-            <input type="text" class="form-control" name="razon" id="razon">
+            <input type="text" class="form-control" name="razon" id="razon" [(ngModel)]="nombreRazon">
           </div>
           <div class="col">
             <label for="rfc" class="form-label">RFC</label>
-            <input type="text" class="form-control" name="rfc" id="rfc">
+            <input type="text" class="form-control text-uppercase" name="rfc" id="rfc" minlength="13" [(ngModel)]="rfc" required>
+            <!-- <p *ngIf="rfc.length < 3">cdnndjn</p> -->
           </div>
         </div>
 
         <div class="mb-3">
           <label for="direccion" class="form-label">Dirección</label>
-          <input type="text" class="form-control" name="direccion" id="direccion">
+          <input type="text" class="form-control" name="direccion" id="direccion" [(ngModel)]="direccion">
         </div>
 
         <div class="mb-3 row">
           <h5>Contacto</h5>
           <div class="col">
             <label for="titular" class="form-label">Titular</label>
-            <input type="text" class="form-control" name="titular" id="titular">
+            <input type="text" class="form-control" name="titular" id="titular" [(ngModel)]="titular">
           </div>
           <div class="col">
             <label for="telefono" class="form-label">Telefono</label>
-            <input type="text" class="form-control" name="telefono" id="telefono">
+            <input type="text" class="form-control" name="telefono" id="telefono" [(ngModel)]="telefono">
           </div>
           <div class="col">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" name="email" id="email">
+            <input type="email" class="form-control" name="email" id="email" [(ngModel)]="email">
           </div>
         </div>
 
@@ -59,8 +61,8 @@
           <h5>Datos bancarios</h5>
           <div class="col">
             <label for="banco" class="form-label">Banco</label>
-            <select class="form-select">
-              <option selected>Eliga una opción</option>
+            <select class="form-select" [(ngModel)]="banco">
+              <option selected value="XXX">Eliga una opción</option>
               <option value="Santander">Santander</option>
               <option value="BBVA">BBVA</option>
               <option value="Banxico">Banxico</option>
@@ -68,18 +70,18 @@
           </div>
           <div class="col">
             <label for="nu-cuenta" class="form-label">No. de cuenta</label>
-            <input type="number" class="form-control" name="nu-cuenta" id="nu-cuenta">
+            <input type="number" class="form-control" name="nu-cuenta" id="nu-cuenta" [(ngModel)]="nCuenta">
           </div>
           <div class="col">
             <label for="clabe" class="form-label">CLABE</label>
-            <input type="number" class="form-control" name="clabe" id="clabe">
+            <input type="number" class="form-control" name="clabe" id="clabe" [(ngModel)]="clabe">
           </div>
         </div>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-success">Crear</button>
+        <button type="button" class="btn btn-success" (click)="addSuppliers()">Crear</button>
       </div>
     </div>
   </div>
