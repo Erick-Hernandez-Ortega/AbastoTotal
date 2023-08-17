@@ -20,9 +20,9 @@
             <label for="clave" class="form-label">Clave</label>
             <input type="text" name="clave" class="form-control text-uppercase" id="clave" maxlength="3"
               [(ngModel)]="clave" (input)="checkInputs()">
-              <span class="form-text text-danger" *ngIf="clave.length < 3">
-                Debe de tener 3 digitos *
-              </span>
+            <span class="form-text text-danger" *ngIf="clave.length < 3">
+              Debe de tener 3 digitos *
+            </span>
           </div>
         </div>
 
@@ -34,16 +34,30 @@
           </div>
           <div class="col">
             <label for="rfc" class="form-label">RFC</label>
-            <input type="text" class="form-control text-uppercase" name="rfc" id="rfc" maxlength="13" [(ngModel)]="rfc" (input)="checkInputs()">
+            <input type="text" class="form-control text-uppercase" name="rfc" id="rfc" maxlength="13" [(ngModel)]="rfc"
+              (input)="checkInputs()">
             <span class="form-text text-danger" *ngIf="rfc.length < 13">
               Debe de ser 13 digitos *
             </span>
           </div>
         </div>
 
-        <div class="mb-3">
-          <label for="direccion" class="form-label">Dirección</label>
-          <input type="text" class="form-control" name="direccion" id="direccion" [(ngModel)]="direccion">
+        <div class="mb-3 row">
+          <div class="col">
+            <label for="calle" class="form-label">Calle y número exterior</label>
+            <input type="text" class="form-control" name="calle" id="calle" [(ngModel)]="calle">
+          </div>
+          <div class="col">
+            <label for="calle" class="form-label">Colonia</label>
+            <input type="text" class="form-control" name="colonia" id="colonia" [(ngModel)]="colonia">
+          </div>
+          <div class="col">
+            <label for="calle" class="form-label">Codigo Postal</label>
+            <input type="text" class="form-control" name="cp" id="cp" [(ngModel)]="codigoPostal">
+            <span class="form-text text-danger" *ngIf="codigoPostal.length < 5">
+              Debe de ser 5 digitos *
+            </span>
+          </div>
         </div>
 
         <div class="mb-3 row">
@@ -78,14 +92,16 @@
           </div>
           <div class="col">
             <label for="nu-cuenta" class="form-label">No. de cuenta</label>
-            <input type="text" class="form-control" name="nu-cuenta" id="nu-cuenta" maxlength="10" [(ngModel)]="nCuenta" (input)="checkInputs()">
+            <input type="text" class="form-control" name="nu-cuenta" id="nu-cuenta" maxlength="10" [(ngModel)]="nCuenta"
+              (input)="checkInputs()">
             <span class="form-text text-danger" *ngIf="nCuenta.length < 10">
               Debe de ser 10 digitos *
             </span>
           </div>
           <div class="col">
             <label for="clabe" class="form-label">CLABE</label>
-            <input type="text" class="form-control" name="clabe" id="clabe" maxlength="18" [(ngModel)]="clabe" (input)="checkInputs()">
+            <input type="text" class="form-control" name="clabe" id="clabe" maxlength="18" [(ngModel)]="clabe"
+              (input)="checkInputs()">
             <span class="form-text text-danger" *ngIf="clabe.length < 18">
               Debe de ser 18 digitos *
             </span>

@@ -12,6 +12,9 @@ export class SuppliersButtonsComponent implements OnInit {
   nombreRazon: string = '';
   rfc: string = '';
   direccion: string = '';
+  calle: string = '';
+  codigoPostal: string = '';
+  colonia: string = '';
   titular: string = '';
   telefono: string = '';
   email: string = '';
@@ -29,18 +32,19 @@ export class SuppliersButtonsComponent implements OnInit {
     if (this.checkFields()) {
       alert('Un campo esta vacio verifique y llenelo de nuevo');
     } else {
+      this.direccion = `${this.calle.trim()}, ${this.colonia.trim()}, ${this.codigoPostal.trim()}`;
       const docRef = await addDoc(collection(db, 'proveedores'), {
         clave: this.clave.toUpperCase(),
-        nombre: this.nombre,
+        nombre: this.nombre.trim(),
         direccion: this.direccion,
-        razon_social: this.nombreRazon,
+        razon_social: this.nombreRazon.trim(),
         rfc: this.rfc,
         telefono: this.telefono,
         clabe: this.clabe,
         numero_cuenta: this.nCuenta,
         banco: this.banco,
-        titular: this.titular,
-        email: this.email,
+        titular: this.titular.trim(),
+        email: this.email.trim(),
       });
       this.miBoton.nativeElement.click();
       this.cleanInputs();
@@ -53,7 +57,9 @@ export class SuppliersButtonsComponent implements OnInit {
       this.nombre === '' ||
       this.nombreRazon === '' ||
       this.rfc === '' ||
-      this.direccion === '' ||
+      this.calle === '' ||
+      this.codigoPostal === '' ||
+      this.colonia === '' ||
       this.titular === '' ||
       this.telefono === '' ||
       this.email === '' ||
@@ -72,7 +78,8 @@ export class SuppliersButtonsComponent implements OnInit {
       this.clabe.length === 18 &&
       this.clave.length === 3 &&
       (this.nCuenta.length && this.telefono.length) === 10 &&
-      this.rfc.length === 13
+      this.rfc.length === 13 &&
+      this.codigoPostal.length === 5
     ) {
       this.esActivo = false;
     } else {
@@ -86,6 +93,9 @@ export class SuppliersButtonsComponent implements OnInit {
     this.nombreRazon = '';
     this.rfc = '';
     this.direccion = '';
+    this.calle = '';
+    this.codigoPostal = '';
+    this.colonia = '';
     this.titular = '';
     this.telefono = '';
     this.email = '';
