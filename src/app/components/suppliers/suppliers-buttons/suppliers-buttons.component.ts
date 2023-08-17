@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from 'src/main';
 
 @Component({
   selector: 'app-suppliers-buttons',
@@ -26,7 +28,20 @@ export class SuppliersButtonsComponent implements OnInit {
     if (this.checkFields()) {
       alert('Un campo esta vacio verifique y llenelo de nuevo');
     } else {
-      console.log(this.banco);
+      const docRef = await addDoc(collection(db, 'proveedores'), {
+        clave: this.clave.toUpperCase(),
+        nombre: this.nombre,
+        direccion: this.direccion,
+        razon_social: this.nombreRazon,
+        rfc: this.rfc,
+        telefono: this.telefono,
+        clabe: this.clabe,
+        numero_cuenta: this.nCuenta,
+        banco: this.banco,
+        titular: this.titular,
+        email: this.email,
+      });
+      
     }
   }
 
@@ -52,9 +67,10 @@ export class SuppliersButtonsComponent implements OnInit {
 
   checkInputs(): void {
     if (
-      (this.rfc.length && this.clabe.length) === 18 &&
+      this.clabe.length === 18 &&
       this.clave.length === 3 &&
-      this.nCuenta.length === 10
+      this.nCuenta.length === 10 &&
+      this.rfc.length === 13
     ) {
       this.esActivo = false;
     } else {
