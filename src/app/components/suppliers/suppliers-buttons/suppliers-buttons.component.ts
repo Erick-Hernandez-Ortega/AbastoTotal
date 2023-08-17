@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from 'src/main';
 
@@ -19,6 +19,7 @@ export class SuppliersButtonsComponent implements OnInit {
   nCuenta: string = '';
   clabe: string = '';
   esActivo: boolean = true;
+  @ViewChild('closeButton', { static: true }) miBoton!: ElementRef;
 
   constructor() {}
 
@@ -41,7 +42,8 @@ export class SuppliersButtonsComponent implements OnInit {
         titular: this.titular,
         email: this.email,
       });
-      
+      this.miBoton.nativeElement.click();
+      this.cleanInputs();
     }
   }
 
@@ -69,12 +71,26 @@ export class SuppliersButtonsComponent implements OnInit {
     if (
       this.clabe.length === 18 &&
       this.clave.length === 3 &&
-      this.nCuenta.length === 10 &&
+      (this.nCuenta.length && this.telefono.length) === 10 &&
       this.rfc.length === 13
     ) {
       this.esActivo = false;
     } else {
       this.esActivo = true;
     }
+  }
+
+  cleanInputs(): void {
+    this.clave = '';
+    this.nombre = '';
+    this.nombreRazon = '';
+    this.rfc = '';
+    this.direccion = '';
+    this.titular = '';
+    this.telefono = '';
+    this.email = '';
+    this.banco = '';
+    this.nCuenta = '';
+    this.clabe = '';
   }
 }
