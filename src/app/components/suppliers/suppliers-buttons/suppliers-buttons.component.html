@@ -34,9 +34,9 @@
           </div>
           <div class="col">
             <label for="rfc" class="form-label">RFC</label>
-            <input type="text" class="form-control text-uppercase" name="rfc" id="rfc" maxlength="18" [(ngModel)]="rfc" (input)="checkInputs()">
-            <span class="form-text text-danger" *ngIf="rfc.length < 18">
-              Debe de ser 18 digitos *
+            <input type="text" class="form-control text-uppercase" name="rfc" id="rfc" maxlength="13" [(ngModel)]="rfc" (input)="checkInputs()">
+            <span class="form-text text-danger" *ngIf="rfc.length < 13">
+              Debe de ser 13 digitos *
             </span>
           </div>
         </div>
