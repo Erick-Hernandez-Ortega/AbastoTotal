@@ -19,7 +19,10 @@
           <div class="col">
             <label for="clave" class="form-label">Clave</label>
             <input type="text" name="clave" class="form-control text-uppercase" id="clave" maxlength="3"
-              [(ngModel)]="clave">
+              [(ngModel)]="clave" (input)="checkInputs()">
+              <span class="form-text text-danger" *ngIf="clave.length < 3">
+                Debe de tener 3 digitos *
+              </span>
           </div>
         </div>
 
@@ -31,8 +34,10 @@
           </div>
           <div class="col">
             <label for="rfc" class="form-label">RFC</label>
-            <input type="text" class="form-control text-uppercase" name="rfc" id="rfc" minlength="13" [(ngModel)]="rfc" required>
-            <!-- <p *ngIf="rfc.length < 3">cdnndjn</p> -->
+            <input type="text" class="form-control text-uppercase" name="rfc" id="rfc" maxlength="18" [(ngModel)]="rfc" (input)="checkInputs()">
+            <span class="form-text text-danger" *ngIf="rfc.length < 18">
+              Debe de ser 18 digitos *
+            </span>
           </div>
         </div>
 
@@ -70,18 +75,24 @@
           </div>
           <div class="col">
             <label for="nu-cuenta" class="form-label">No. de cuenta</label>
-            <input type="number" class="form-control" name="nu-cuenta" id="nu-cuenta" [(ngModel)]="nCuenta">
+            <input type="text" class="form-control" name="nu-cuenta" id="nu-cuenta" maxlength="10" [(ngModel)]="nCuenta" (input)="checkInputs()">
+            <span class="form-text text-danger" *ngIf="nCuenta.length < 10">
+              Debe de ser 10 digitos *
+            </span>
           </div>
           <div class="col">
             <label for="clabe" class="form-label">CLABE</label>
-            <input type="number" class="form-control" name="clabe" id="clabe" [(ngModel)]="clabe">
+            <input type="text" class="form-control" name="clabe" id="clabe" maxlength="18" [(ngModel)]="clabe" (input)="checkInputs()">
+            <span class="form-text text-danger" *ngIf="clabe.length < 18">
+              Debe de ser 18 digitos *
+            </span>
           </div>
         </div>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-success" (click)="addSuppliers()">Crear</button>
+        <button type="button" class="btn btn-success" (click)="addSuppliers()" [disabled]="esActivo">Crear</button>
       </div>
     </div>
   </div>

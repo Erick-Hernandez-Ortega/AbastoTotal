@@ -16,6 +16,7 @@ export class SuppliersButtonsComponent implements OnInit {
   banco: string = '';
   nCuenta: string = '';
   clabe: string = '';
+  esActivo: boolean = true;
 
   constructor() {}
 
@@ -23,7 +24,7 @@ export class SuppliersButtonsComponent implements OnInit {
 
   async addSuppliers() {
     if (this.checkFields()) {
-      alert("Un campo esta vacio verifique y llenelo de nuevo")
+      alert('Un campo esta vacio verifique y llenelo de nuevo');
     } else {
       console.log(this.banco);
     }
@@ -46,6 +47,18 @@ export class SuppliersButtonsComponent implements OnInit {
       return true;
     } else {
       return false;
+    }
+  }
+
+  checkInputs(): void {
+    if (
+      (this.rfc.length && this.clabe.length) === 18 &&
+      this.clave.length === 3 &&
+      this.nCuenta.length === 10
+    ) {
+      this.esActivo = false;
+    } else {
+      this.esActivo = true;
     }
   }
 }
