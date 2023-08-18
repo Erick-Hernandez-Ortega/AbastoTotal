@@ -14,11 +14,11 @@ export class DashboardComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // const auth = getAuth();
-    // if (auth.currentUser === null) {
-    //   this.router.navigate(['login']);
-    //   alert('Inicia sesion primero');
-    // }
+    const auth = getAuth();
+    if (auth.currentUser === null) {
+      this.router.navigate(['login']);
+      alert('Inicia sesion primero');
+    }
   }
 
   signOut(): void {
