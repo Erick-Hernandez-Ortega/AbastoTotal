@@ -130,4 +130,11 @@ export class TableSuppliersComponent implements OnInit {
       alert(`Ocurrio un error: ${error}`);
     }
   }
+
+  showMoreProductos(event: Event) {
+    const valorSeleccionado = (event.target as HTMLSelectElement).value;
+
+    this.limit = parseInt(valorSeleccionado);
+    this.loadDataSuppliers();
+  }
 }
