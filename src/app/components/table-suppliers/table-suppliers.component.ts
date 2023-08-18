@@ -8,6 +8,7 @@ import {
   doc,
   getDoc,
   updateDoc,
+  deleteDoc,
 } from 'firebase/firestore';
 import { db } from 'src/main';
 
@@ -32,8 +33,8 @@ export class TableSuppliersComponent implements OnInit {
   clabe: string = '';
   esActivo: boolean = false;
   idActualizar: string = '';
+  idBorrar: string = '';
   @ViewChild('closeButton', { static: true }) closeButton!: ElementRef;
-
 
   constructor() {}
 
@@ -92,10 +93,10 @@ export class TableSuppliersComponent implements OnInit {
     }
   }
 
-  async updateSuppliers()  {
+  async updateSuppliers() {
     try {
       const docRef = doc(db, 'proveedores', this.idActualizar);
-      
+
       await updateDoc(docRef, {
         nombre: this.nombre.trim(),
         clave: this.clave.toUpperCase(),
@@ -107,9 +108,24 @@ export class TableSuppliersComponent implements OnInit {
         email: this.email.trim(),
         banco: this.banco,
         numero_cuenta: this.nCuenta,
-        clabe: this.clabe
+        clabe: this.clabe,
       });
       this.closeButton.nativeElement.click();
+    } catch (error) {
+      alert(`Ocurrio un error: ${error}`);
+    }
+  }
+
+  selectIdToDelete(id: string): void {
+    this.idBorrar = id;
+  }
+
+  async deleteSuppliers() {
+    try {
+      const docRef = doc(db, 'proveedores', this.idBorrar);
+
+      await deleteDoc(docRef);
+      this.idBorrar = '';
     } catch (error) {
       alert(`Ocurrio un error: ${error}`);
     }

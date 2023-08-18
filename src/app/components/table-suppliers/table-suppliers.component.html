@@ -31,10 +31,10 @@
           <p class="color">CLABE: {{ proveedor.clabe }}</p>
         </td>
         <td>
-          <button type="button" class="btn btn-danger d-block" data-bs-toggle="modal" data-bs-target="#modal-d"><i
-              class="bi bi-trash3"></i></button>
-          <button type="button" class="btn btn-primary my-2" (click)="showSuppliers(proveedor.id)" data-bs-toggle="modal" data-bs-target="#modal-u-s"><i
-              class="bi bi-pen"></i></button>
+          <button type="button" class="btn btn-danger d-block" data-bs-toggle="modal" data-bs-target="#modal-d-s"><i
+              class="bi bi-trash3" (click)="selectIdToDelete(proveedor.id)"></i></button>
+          <button type="button" class="btn btn-primary my-2" (click)="showSuppliers(proveedor.id)"
+            data-bs-toggle="modal" data-bs-target="#modal-u-s"><i class="bi bi-pen"></i></button>
         </td>
       </tr>
     </tbody>
@@ -50,7 +50,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
+
         <div class="mb-3 row">
           <div class="col">
             <label label="nombre" class="form-label">Nombre</label>
@@ -140,7 +140,32 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" [disabled]="esActivo" (click)="updateSuppliers()">Actualizar</button>
+        <button type="button" class="btn btn-primary" [disabled]="esActivo"
+          (click)="updateSuppliers()">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Delete Suppliers -->
+<div class="modal fade" id="modal-d-s" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar proveedor</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <p>
+            Antes de proceder con la acción de borrado, es importante tener en cuenta que eliminar información es una
+            acción irreversible. Una vez que se elimina un registro o dato, no se podrá recuperar posteriormente.
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" (click)="deleteSuppliers()" data-bs-dismiss="modal">Borrar</button>
       </div>
     </div>
   </div>
