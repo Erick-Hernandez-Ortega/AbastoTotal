@@ -93,14 +93,31 @@
       </div>
     </div>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light">
       <div
         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
+        <h1 class="h2">Bienvenido a AbastoTotal</h1>
         <app-dashboard-toolbar></app-dashboard-toolbar>
       </div>
 
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+      <div class="row mb-3">
+        <div class="col d-flex justify-content-center">
+          <div class="card w-75 text-center p-4 pointer h-100 " (click)="redirectToTheView('/inventory')">
+            <i class="bi bi-box2"></i>
+            <h5>Inventario</h5>
+            <span class="text-muted">Administra productos, agregar, actualizar y eliminar, para mantener un control
+              completo y organizado.</span>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center">
+          <div class="card w-75 text-center p-4 pointer h-100" (click)="redirectToTheView('/suppliers')">
+            <i class="bi bi-person-rolodex"></i>
+            <h5>Proveedores</h5>
+            <span class="text-muted">Agrega nuevos proveedores, actualizar su información y eliminar registros, lo que
+              te permite mantener un control completo.</span>
+          </div>
+        </div>
+      </div>
 
       <h2>Ultimas ventas</h2>
       <app-table-dashboard></app-table-dashboard>
