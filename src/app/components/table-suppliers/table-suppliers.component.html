@@ -33,10 +33,115 @@
         <td>
           <button type="button" class="btn btn-danger d-block" data-bs-toggle="modal" data-bs-target="#modal-d"><i
               class="bi bi-trash3"></i></button>
-          <button type="button" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#modal-u"><i
+          <button type="button" class="btn btn-primary my-2" (click)="showSuppliers(proveedor.id)" data-bs-toggle="modal" data-bs-target="#modal-u-s"><i
               class="bi bi-pen"></i></button>
         </td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<!-- Modal Update Suppliers -->
+<div class="modal fade modal-lg" id="modal-u-s" tabindex="-1" aria-labelledby="modal-u-s" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Actualizar el proveedor</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="mb-3 row">
+          <div class="col">
+            <label label="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre-s" [(ngModel)]="nombre">
+          </div>
+          <div class="col">
+            <label for="clave" class="form-label">Clave</label>
+            <input type="text" name="clave" class="form-control text-uppercase" id="clave" maxlength="3"
+              [(ngModel)]="clave" (input)="checkInputs()">
+            <span class="form-text text-danger" *ngIf="clave.length < 3">
+              Debe de tener 3 digitos *
+            </span>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <h5>Razón Social</h5>
+          <div class="col">
+            <label for="razon" class="form-label">Nombre de la razón</label>
+            <input type="text" class="form-control" name="razon" id="razon" [(ngModel)]="nombreRazon">
+          </div>
+          <div class="col">
+            <label for="rfc" class="form-label">RFC</label>
+            <input type="text" class="form-control text-uppercase" name="rfc" id="rfc" maxlength="13" [(ngModel)]="rfc"
+              (input)="checkInputs()">
+            <span class="form-text text-danger" *ngIf="rfc.length < 13">
+              Debe de ser 13 digitos *
+            </span>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <div class="col">
+            <label for="direccion" class="form-label">Direccion</label>
+            <input type="text" class="form-control" name="direccion" id="direccion" [(ngModel)]="direccion">
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <h5>Contacto</h5>
+          <div class="col">
+            <label for="titular" class="form-label">Titular</label>
+            <input type="text" class="form-control" name="titular" id="titular" [(ngModel)]="titular">
+          </div>
+          <div class="col">
+            <label for="telefono" class="form-label">Telefono</label>
+            <input type="text" class="form-control" name="telefono" id="telefono" maxlength="10" [(ngModel)]="telefono">
+            <span class="form-text text-danger" *ngIf="telefono.length < 10">
+              Debe de ser 10 digitos *
+            </span>
+          </div>
+          <div class="col">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email" [(ngModel)]="email">
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <h5>Datos bancarios</h5>
+          <div class="col">
+            <label for="banco" class="form-label">Banco</label>
+            <select class="form-select" [(ngModel)]="banco">
+              <option selected value="XXX">Eliga una opción</option>
+              <option value="Santander">Santander</option>
+              <option value="BBVA">BBVA</option>
+              <option value="Banxico">Banxico</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="nu-cuenta" class="form-label">No. de cuenta</label>
+            <input type="text" class="form-control" name="nu-cuenta" id="nu-cuenta" maxlength="10" [(ngModel)]="nCuenta"
+              (input)="checkInputs()">
+            <span class="form-text text-danger" *ngIf="nCuenta.length < 10">
+              Debe de ser 10 digitos *
+            </span>
+          </div>
+          <div class="col">
+            <label for="clabe" class="form-label">CLABE</label>
+            <input type="text" class="form-control" name="clabe" id="clabe" maxlength="18" [(ngModel)]="clabe"
+              (input)="checkInputs()">
+            <span class="form-text text-danger" *ngIf="clabe.length < 18">
+              Debe de ser 18 digitos *
+            </span>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" [disabled]="esActivo" (click)="updateSuppliers()">Actualizar</button>
+      </div>
+    </div>
+  </div>
 </div>
