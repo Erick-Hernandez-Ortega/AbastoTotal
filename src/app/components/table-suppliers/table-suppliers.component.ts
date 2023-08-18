@@ -11,6 +11,8 @@ import {
   deleteDoc,
 } from 'firebase/firestore';
 import { db } from 'src/main';
+import { Router } from '@angular/router';
+import { getAuth } from 'firebase/auth';
 
 @Component({
   selector: 'app-table-suppliers',
@@ -36,9 +38,15 @@ export class TableSuppliersComponent implements OnInit {
   idBorrar: string = '';
   @ViewChild('closeButton', { static: true }) closeButton!: ElementRef;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
+    const auth = getAuth();
+
+    if (auth.currentUser === null) {
+      this.router.navigate(['login']);
+      alert('Inicia sesion primero');
+    }
     this.loadDataSuppliers();
   }
 
