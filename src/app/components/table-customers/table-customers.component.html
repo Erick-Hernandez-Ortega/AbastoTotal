@@ -2,29 +2,40 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Clave</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Datos de contacto</th>
+        <th scope="col">Datos bancarios</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
+      <tr *ngFor="let cliente of customers">
+        <th scope="row">{{ cliente.clave }}</th>
+        <td>{{ cliente.nombre + " " + cliente.apellidos }}</td>
+        <td>
+          <span>Email: {{ cliente.email }}</span>
+          <hr>
+          <span>Telefono: {{ cliente.telefono }}</span>
+          <hr>
+          <span class="color">Dirección: {{ cliente.direccion }} </span>
+        </td>
+
+        <td *ngIf="cliente.banco === 'null'; else pago">
+          El cliente paga en efectivo
+        </td>
+        <ng-template #pago>
+          <td>
+            <p>Banco: {{ cliente.banco }}</p>
+            <p class="color">No. cuenta: {{ cliente.numero_cuenta }}</p>
+            <p class="color">CLABE: {{ cliente.clabe }}</p>
+          </td>
+        </ng-template>
+
+        <td>
+          <button type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
+          <button type="button" class="btn btn-primary mx-2"><i class="bi bi-pen"></i></button>
+        </td>
       </tr>
     </tbody>
   </table>
