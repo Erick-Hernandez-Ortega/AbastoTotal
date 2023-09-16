@@ -1,7 +1,8 @@
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAddCustomer">Agregar cliente</button>
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAddCustomer">Agregar
+  cliente</button>
 
 <!-- Modal Add Customer -->
-<div class="modal fade" id="modalAddCustomer" tabindex="-1" aria-labelledby="Modal añadir cliente" aria-hidden="true">
+<div class="modal fade modal-lg" id="modalAddCustomer" tabindex="-1" aria-labelledby="Modal añadir cliente" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -9,7 +10,87 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+
+        <div class="row mb-3">
+          <div class="col">
+            <label for="" class="form-label">Nombre</label>
+            <input type="text" name="" id="" class="form-control">
+          </div>
+          <div class="col">
+            <label for="" class="form-label">Clave</label>
+            <input type="text" name="" id="" class="form-control">
+            <span class="form-text text-danger">
+              Debe de tener 3 digitos *
+            </span>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col">
+            <label for="" class="form-label">Email</label>
+            <input type="text" name="" id="" class="form-control">
+          </div>
+          <div class="col">
+            <label for="" class="form-label">Telefono</label>
+            <input type="text" name="" id="" class="form-control">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col">
+            <label for="" class="form-label">Dirección</label>
+            <input type="text" name="" id="" class="form-control">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <h5>Datos bancarios</h5>
+          <div class="col">
+            <p>¿El cliente paga en efectivo?</p>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioBanco" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadio1">
+                No
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioBanco" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadio2">
+                Si
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <div class="col">
+            <label for="banco" class="form-label">Banco</label>
+            <select class="form-select">
+              <option selected value="XXX">Eliga una opción</option>
+              <option value="Santander">Santander</option>
+              <option value="BBVA">BBVA</option>
+              <option value="Banxico">Banxico</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="nu-cuenta" class="form-label">No. de cuenta</label>
+            <input type="text" class="form-control" name="nu-cuenta" id="nu-cuenta" maxlength="10">
+            <span class="form-text text-danger">
+              Debe de ser 10 digitos *
+            </span>
+          </div>
+        </div>
+        
+        <div class="row mb-3">
+          <div class="col">
+            <label for="clabe" class="form-label">CLABE</label>
+            <input type="text" class="form-control" name="clabe" id="clabe" maxlength="18">
+            <span class="form-text text-danger">
+              Debe de ser 18 digitos *
+            </span>
+          </div>
+        </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
