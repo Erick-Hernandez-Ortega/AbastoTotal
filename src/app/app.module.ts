@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './components/modal/modal.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
-import { TableDashboardComponent } from './components/table-dashboard/table-dashboard.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { InventoryTableComponent } from './components/inventory-table/inventory-table.component';
 import { InventoryButtonsComponent } from './components/inventory/inventory-buttons/inventory-buttons.component';
@@ -34,7 +33,6 @@ import { TableCustomersComponent } from './components/table-customers/table-cust
     ModalComponent,
     DashboardComponent,
     HeaderComponent,
-    TableDashboardComponent,
     InventoryComponent,
     InventoryTableComponent,
     InventoryButtonsComponent,
